@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>队列混合输入及查询</title>
+        <meta charset="utf-8">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .main {
+                margin: 100px;
+                text-align: left;
+            }
+            .main input {
+                margin: 20px 0;
+                width: 200px;
+                height: 40px;
+                text-indent: 10px;
+            }
+            button {
+                margin: 0 10px;
+                padding: 5px 15px;
+                border: none;
+                color: #fff;
+                background-color: #4aa;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: #488;
+            }
+            textarea {
+                margin: 20px 0;
+                padding: 10px;
+                height: 100px;
+                width: 400px;
+                font-family: "Microsoft YaHei";
+            }
+            .in,
+            .out {
+                display: inline-block;
+                margin: 20px;
+            }
+            .box {
+                display: inline-block;
+                margin: 5px;
+                padding: 0 10px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                background-color: #d88;
+                color: #fff;
+            }
+            .box:hover {
+                cursor: pointer;
+            }
+            .box:active {
+                cursor: pointer;
+                background-color: #a44;
+            }
+            h3 {
+                margin: 10px 0;
+                color: #4aa;
+            }
+            ul {
+                padding: 10px 20px;
+                border: .5px dotted #4aa;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <h3>功能说明</h3>
+            <ul>
+                <li>模拟一个队列的输入和删除元素，单击可删除某一元素</li>
+                <li>允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔</li>
+                <li>点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识</li>
+            </ul>
+            <textarea id="input" placeholder="请输入需要加入队列的内容"></textarea>
+            
+            <div class="in">
+                <button id="leftIn">左侧入</button>
+                <button id="rightIn">右侧入</button>
+            </div>
+            <div class="out">
+                <button id="leftOut">左侧出</button>
+                <button id="rightOut">右侧出</button>
+            </div>
+            <div id="display">    
+            </div>
+            <div>
+                <input type="text" id="search"  placeholder="请输入查询字段">
+                <button id="btnSearch">查询</button>
+                
+                <button id="clearInput">清空输入</button>
+                <button id="clearQueue">清空队列</button>
+            </div>
+        </div>
+        <script>
+            var arr = [];
+            function createBox(arr){
+                var display = document.getElementById("display");
+                while(display.firstChild){
+                    display.removeChild(display.firstChild);
+                }
+                for(var i = 0; i < arr.length; i++){
+                    var newone = document.createElement("p");
+                    var newone_text = document.createTextNode(arr[i]);
+                    newone.appendChild(newone_text);
+                    newone.className = "box";
+                    newone.setAttribute("id",i);
+                    display.appendChild(newone);
+                    
+                    newone.onclick = function(){
+                        display.removeChild(this);
+                        arr.splice(this.id,1);
+                    }
+                }
+            }
+            
+            function mainfunc(btnid){
+                var btn = document.getElementById(btnid);
+                var input = document.getElementById("input");
+                
+                btn.onclick = function(){
+                    switch(btnid){
+                        case "leftIn": 
+                        if(/^[\s,，]*$/.test(input.value)){
+                            alert("请输入有效内容");
+                            return false;
+                        }else {
+                            var arr2 = deal(input);
+                            arr = arr2.concat(arr);
+                        }
+                        break;
+                        
+                        case "rightIn":
+                        if(/^[\s,，]*$/.test(input.value)){
+                            alert("请输入有效内容");
+                            return false;
+                        }else {
+                            var arr2 = deal(input);
+                            arr = arr.concat(arr2);
+                        }
+                        break;
+                        
+                        case "leftOut": 
+                        if(arr.length == 0){
+                            alert("队列为空");
+                            return false;
+                        }else arr.shift();
+                        break;
+                        
+                        case "rightOut": 
+                        if(arr.length == 0){
+                            alert("队列为空");
+                            return false;
+                        }else arr.pop();
+                        break;
+                        default: return false;    
+                    }
+                    createBox(arr);
+                }    
+            }
+            function deal(text){
+                var content = text.value;
+                return content.replace(/^[\s,，]*|[\s,，]*$/g,"").split(/[\s,，]+/);
+            }
+            function search(){
+                var btnSearch = document.getElementById("btnSearch");
+                var target = document.getElementById("search");
+                btnSearch.onclick = function(){
+                    var targetContent = target.value.replace(/[\s,，]*/g,"");
+                    if(targetContent == ""){alert("请输入查询字段");}
+                    else{
+                        var countArr = arr.map(function(val,index){
+                            if(val.indexOf(targetContent) != -1){
+                                return index;
+                            }else return false;
+                        }).filter(function(val){return val !== false;});
+                        
+                        if(countArr.length == 0){alert("没有符合条件的查询结果");}
+                        else {
+                            createBox(arr);
+                            for(var i = 0; i < countArr.length; i++){
+                                var elem = document.getElementById(countArr[i]);
+                                elem.style.backgroundColor = "#668";
+                                elem.style.fontWeight = "bold";
+                            }
+                        }
+                    }
+                }
+            }
+            function clear(){
+                var clearInput = document.getElementById("clearInput");
+                var clearQueue = document.getElementById("clearQueue");
+                clearInput.onclick = function(){
+                    var input = document.getElementById("input");
+                    input.value = "";
+                }
+                clearQueue.onclick = function(){
+                    var search = document.getElementById("search");
+                    search.value = "";
+                    arr = [];
+                    var display = document.getElementById("display");
+                    while(display.firstChild){
+                        display.removeChild(display.firstChild);
+                    }
+                }
+            
+            
+            }
+            window.onload = function(){
+                mainfunc("leftIn");
+                mainfunc("rightIn");
+                mainfunc("leftOut");
+                mainfunc("rightOut");
+                search();
+                clear();
+            }                
+        </script>
+    </body>
+</html>

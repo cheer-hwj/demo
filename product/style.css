@@ -1,0 +1,503 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 1280px;    
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    color: #777;
+    background-color: #fff;
+}
+nav {    
+    width: 100%;
+    height: 63px;
+    margin: 3px 0;
+}
+nav li {
+    display: inline-block;
+    width: 60px;
+    margin: 0 20px;
+    line-height: 60px; 
+    text-align: center;
+    cursor: pointer;
+}
+nav li:hover {
+    border-bottom: #e74f4d 3px solid;
+    color: #e74f4d;
+}
+.logo {
+    width: 100px;
+    margin-right: 40%;
+    
+    text-align: right;
+    font-family: "SimHei";
+    font-size: 21px;
+    color: #393a3a;
+
+    background-image: url(images/logo.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.login {
+    color: #e74f4d;
+    background-image: url(images/login.png);
+    background-position: left center;
+    background-repeat: no-repeat;                
+}
+li.logo:hover,
+li.logo:active,
+li.login:hover,
+li.login:active {
+    border-color: transparent;
+    font-weight: bold;
+}
+.homepage {
+    position: relative;
+    height: 690px;
+    background-image: url(images/bg1.jpg);
+    background-size: cover;
+    background-color: #555;    
+}
+.homecontent {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-left: 125px;
+    
+    height: 300px;
+    width: 1155px;
+    color: #fff;
+}
+.time-life {
+    font-size: 60px;
+}
+.slogan {
+    margin: 20px 10px;
+    font-size: 21px;
+    line-height: 30px;
+}
+.btn {
+    padding: 0.5em 3.5em;
+    color: #fff;
+    background-color: #e74f4d;
+    border-radius: 0;
+    border: none;
+    letter-spacing: 0.2em;
+}
+.btn-start {
+    margin: 50px 10px 0 10px;
+    font-size: 30px;
+}
+.btn-start:hover {
+    background-color: #da3f3d;
+}
+.feature {
+    margin: auto;
+    padding-bottom: 70px;
+    
+    width: 1280px;
+    text-align: center;
+    font-family: "SimHei";
+}
+.feature div {
+    display: inline-block;    
+}
+.feature img {
+    margin: 45px 0;
+}
+.feature p {
+    padding: 0 75px;
+    width: 155px;
+    border-left: #999 2px solid;
+}
+.feature div:first-child p {
+    border: none;
+}
+.more {
+    padding: 70px 0;
+    text-align: center;
+    font-family: "SimHei";
+    font-size: 53px;
+    color: #a0a1a1;
+    background-color: #edecec;
+    line-height: 80px;
+}
+.new-world {
+    height: 340px;
+    color: #fff;
+    text-align: center;
+    background-image: url(images/bg2.jpg);
+    background-size: cover;
+    background-color: #555;    
+}
+.new-word {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-size: 21px;
+}
+.divided {
+    width: 30px;
+    height: 3px;
+    margin: auto;
+    background-color: #fff;
+}
+.explain {
+    padding: 30px;
+    font-size: 12px;
+}
+.inquiry {
+    display: inline-block;
+    vertical-align: top;
+    
+}
+.select {
+    width: 225px;
+    height: 35px;
+	padding-left: 10px;
+	margin-right: 30px;
+    background-image: url(images/arrow.png);
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: right center;
+    border: 1px transparent solid;
+    cursor: default;
+}
+.board {
+	position: absolute;
+	width: 235px;
+    list-style: none;
+    text-align: left;
+    font-size: 12px;
+    line-height: 27px;
+    color: #787878;
+    background-color: #e3e3e4;  
+	border: 1px #be4e48 solid;
+	border-top: none;	
+}
+.board li {
+    padding-left:  27px;
+}
+.board li:hover,
+.board li:active { 
+    color: #fff;
+    background-color: #be4e48;
+    background-image: url(images/selected.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.btn-inquiry {
+    width: 235px;
+    height: 35px;
+    background-color: #be4e48;
+}
+.btn-inquiry:hover{
+    background-color: #e74f4d;
+}
+.activities {
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    color: #9f9f9f;
+    background-color: #f7f7f7;
+}
+.activities div {
+    display: inline-block;
+    margin: 100px 20px;
+}
+.activities img {
+    background-color: #fff;
+    padding: 15px 10px;
+    border: 1px #dadada solid;
+    margin: 10px;
+}
+.activities h3 {
+    color: #646464;
+}
+.activities h2 {
+    color: #333;
+    letter-spacing: 1em;
+}
+.beijing-newworld > div{
+    display: inline-block;
+    vertical-align: top;
+}
+.time {
+    position: relative;
+    width: 66.5%;
+    height: 570px;
+    
+    color: #fff;
+    font-size: 21px;
+    text-align: center;
+    line-height: 2em;
+    background-image: url(images/bg3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+}
+.time-zh {
+    margin-top: 135px;
+    font-size: 50px;
+    line-height: 70px;
+}
+.time-en {
+    font-size: 158px;
+    line-height: 160px;
+}
+
+.time-content{
+    width: 32%;
+    text-align: center;
+}
+/* 三角形 */
+.triangle-left{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 30px solid #fff;
+    border-bottom: 15px solid transparent;
+}
+.triangle-right{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 30px solid #fff;
+    border-bottom: 15px solid transparent;
+}
+.time-content img {
+    margin-top: 165px;
+}
+.time-content p {
+    padding: 30px 70px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 30px;
+    color: #aaa;
+}
+.btn-more {
+    width: 105px;
+    height: 35px;
+    background-color: #fff;
+    color: #e46669;
+    border: #e46669 1.5px solid;
+}
+/*圆形*/
+.circle { 
+    display: inline-block;
+    margin: 20px 5px;
+    width: 8px; 
+    height: 8px; 
+    border: 1px #929292 solid;
+    -moz-border-radius: 4px; 
+ -webkit-border-radius: 4px; 
+         border-radius: 4px; 
+} 
+.circle-selected {
+    background-color: #929292;
+}
+.newtime > div {
+    display: inline-block;
+	width: 33%;
+	height: 520px;
+    font-family: "SimHei";
+    font-size: 21px;
+    text-align: center;
+	vertical-align: top;
+}
+.newtime p {
+    margin: 170px 0 20px 0;
+}
+.newtime-pink {
+    color: #fff;
+    background-color: #e74f4d;  
+}
+.newtime .divided {
+    background-color: #ababab;
+    height: 2px;
+}
+.newtime-pink .divided {
+    background-color: #fff;
+}
+#newtime-img {
+    position: relative;
+	width: 33%;
+	font-size: 0px;
+    background-image: url(images/bg4.jpg);
+	background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+}
+.btn-seemore {
+    margin-top: 70px;
+    font-family: "SimHei";
+    font-size: 21px;
+    background-color: transparent;
+    border: 1px #fff solid;
+	padding: 0.5em 1.5em;
+}
+.btn-white {
+    border: 1px #e74f4d solid;
+    color: #e74f4d;   
+}
+.registration {
+    width: 1280px;
+    margin: auto;
+    text-align: center;
+    padding-top: 150px;
+    color: #aaa;
+}
+.registration h2 {
+    font-family: "SimHei";
+    font-size: 21px;
+    font-weight: normal;
+    color: #323333;
+}
+.divided-pink {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #e7504d;
+}
+.treaty {
+    float: left;
+    padding: 100px;
+    width: 285px;
+  
+    text-align: right;
+}
+.treaty div {
+    margin: 30px 0;
+}
+.treaty p {
+    font-family: "SimSun";
+    font-size: 12px;
+    line-height: 21px;
+    text-align: left;
+    color: #9d9b99;
+}
+.treaty h3 {
+    width:100%;
+    margin-bottom: 20px;
+    font-family: "SimHei";
+    font-size: 14px;
+    font-weight: normal;
+    color: #666160;
+    text-align: left;
+}
+.btn-treaty {
+    padding: .2em 0 .2em 1em;
+    color: #959291;
+    font-family: "SimHei";
+    background-color: transparent;
+    background-image: url(images/more.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.registration table {
+    margin: 130px;
+    font-family: "SimHei";
+    font-size: 12px;
+    line-height: 45px;
+    text-indent: 10px;
+    color: #838080;
+    text-align: left;   
+}
+.registration td {    
+    width: 330px;          
+    background-color: #ededef;     
+	border: 10px solid #fff;
+    border-left:0;
+}
+.row-cell {
+    background-color: #ededef;         
+	border: 10px solid #f00;
+}
+.registration input,
+.registration textarea {   
+    border: none;
+    background-color: transparent;
+}
+.registration textarea {
+    height: 6em;
+    width: 28em;
+    vertical-align: top;
+    padding:1em;
+}
+.submission {
+    text-align: center;
+}
+.submission:hover {
+    background-color: #e7504d;
+}
+/*联系我们*/
+.contact {
+    padding: 100px;
+    text-align: center;
+    color: #fff;
+    background-color: #32363e;
+}
+.contact h2 {
+    font-family: "SimHei";
+    font-size: 21px;
+    font-weight: normal;
+}
+.contact p {  
+    margin: 10px; 
+    font-family: "SimSun";
+    font-size: 12px;
+}
+.mail {
+    width: 430px;
+    height: 40px; 
+    margin: 20px 0;   
+    padding-left: 1em;
+    font-size:14px;
+    border: none;
+}
+.btn-mail {        
+    margin: 20px 0;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #6f7278;
+    border-radius: 0;
+    border: none;
+}
+.contact img {
+    margin: 20px;
+}
+footer {
+    padding-left:100px;
+    line-height: 60px;
+	font-size: 12px;   
+    font-family: "SimSun";
+    background-color: #303039;
+}
+footer a{
+    margin-right: 20px;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+footer a:hover{
+    color: #e7504d;
+}

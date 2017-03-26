@@ -1,0 +1,771 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    font-family: "Microsoft YaHei", "Arial", sans-serif;
+    font-size: 12px;
+    height:100%;
+    color: #323333;
+    background-color: #eeeded;
+}
+/**
+* ------------------------导航部分-----------------------------------
+**/
+nav {
+    position: fixed;
+    top:0;
+    width: 100%;
+    min-width: 700px;
+    height: 56px;
+    line-height: 56px;
+    background-color: #2289bf;
+    z-index: 10;
+}
+.logo {
+    float: left;
+    
+    margin-left: 35px;
+    width: 56px;
+    height: 56px;
+    vertical-align: middle;
+    
+    background-image: url(images/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.input-search {
+    border-radius: 30px;
+    border: transparent;
+    padding: 0 15px;
+    width: 300px;
+    height: 30px;
+    
+    background-image: url(images/search.png);
+    background-position: 5%;
+    background-repeat: no-repeat;
+}
+.btn {
+    margin: 0 20px;
+    border: 0;
+    border-radius: 5px;
+    width: 5em;
+    height: 2em;
+    
+    color: #fff;
+    background-color: #2289bf;
+}
+.btn:hover {
+    background-color: #225c83;
+}
+.btn-login {
+    height: 56px;
+    background-color: transparent;
+    background-image: url(images/login.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.btn-login:hover {
+    color: #e2cd47;
+    background-color: transparent;
+    background-image: url(images/login-hover.png);
+}
+.nav-right {
+    margin: 0 35px;
+    float: right;
+}
+/**
+* ------------------------左侧内容-----------------------------------
+**/
+aside {
+    position: fixed;
+    width: 280px;
+    top: 56px;
+    bottom: 0;
+    color: #6e8096;
+    
+    background-color: #2a2e3d;
+}
+.profile {
+    margin: 20px;
+    padding: 0 20px;
+    
+}
+.avatar {
+    display: inline-block;
+    
+    box-sizing: border-box;
+    border: 1px #c7c8ca solid;
+    border-radius: 55px;
+    width: 55px;
+    height: 55px;
+    padding:1px;
+    
+    vertical-align: middle;
+    
+    background-image: url(images/avatar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.username {
+    margin: 10px;
+    
+    font-weight: bold;
+    
+    color: #c7c8ca;
+}
+.divided {
+    display: inline-block;
+    
+    width: 2px;
+    height: 30px;
+    
+    background-color: #313545;
+}
+
+.profile p{
+    display: inline-block;
+    margin: 30px;
+    
+    text-align: center;
+}
+/* 子文档选择 */
+.item {
+    padding: 15px 50px;
+    color: #ededf0;
+}
+.item > p > img {
+    margin: 0 10px;
+}
+.item:hover {
+    background-color: #383d4e;
+}
+.item ul {
+    margin: 10px 0;
+}
+.file {
+    list-style: none;
+    margin: 10px 20px;
+    padding: 0 10px;
+    
+    color: #ededf0;
+    background-image: url(images/picked.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.file > p > img {
+    margin: 0 5px;
+}
+.file:hover {
+    background-image: url(images/pickedone.png);
+    background-position: left 5px;
+}
+.doc {
+    list-style: none;
+    margin: 10px 20px;
+    padding: 0 10px;
+}
+.doc > p > img {
+    margin: 0 5px;
+    vertical-align: middle;
+}
+.report ul li  > ul{
+    display: none;
+}
+.report ul li:hover  > ul{
+    display: block;
+}
+.report  li{
+    opacity: 0.5;
+}
+.report  li:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+/**
+* ------------------------主要内容部分-----------------------------------
+**/
+.main {
+    margin-top: 56px;
+    margin-left: 280px;
+    min-width: 1000px;
+}
+.cata {
+    text-indent: 30px;
+    line-height: 50px;
+    color: #b7b7b7;
+    background-color: #fff;
+}
+.cata strong {
+    font-weight: normal;
+    color: #2289bf;
+}
+/**
+* ~~~~~~~~~~~~查询项部分~~~~~~~~~~~~
+**/
+.card {
+    margin: 20px auto;
+    box-sizing: border-box;
+    border: 1px solid #dedede;
+    padding: 10px 20px;
+    width: 960px;
+    
+    background-color: #fff;
+}
+
+
+/* 改变select的样式 */
+.selection {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+.selection label{
+    margin: 10px;
+    color: #b7b7b7;
+}
+.selection select{
+    margin: 5px;
+    border: none;
+    border: 1px solid #c2c2c2;
+    box-sizing: border-box;
+    padding: 0 20px 0 10px;
+    width: 80px;
+    height: 30px;
+    
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    
+    cursor:pointer;
+}
+/* for IE */
+.selection select::-ms-expand {
+    display: none;
+}
+.selection:after {
+    content: url(images/sel-wrap.png);
+    right: 15px;
+    top: 10px;
+    position:absolute;
+}
+.selection:hover:after {
+    content: url(images/sel.png);
+}
+.selection option{
+    text-indent: 5px;
+    padding: 5px;
+}
+.buyer-seller {
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+}
+.buyer-seller .selection{
+    display: block;
+}
+.buyer-seller .selection select{
+    width: 120px;
+}
+.btn-ex {
+    position: absolute;
+    right: -28px;
+    top: 20px;
+    border: 0;
+    width: 30px;
+    height: 40px;
+    
+    background: none;
+    background-image: url(images/ex.png);
+    background-size: cover;
+    
+    cursor: pointer;
+    opacity: 0.8;
+}
+.btn-ex:hover {
+    opacity: 1;
+}
+.info {
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    width: 440px;
+    
+    vertical-align: top;
+}
+.sel-date select,
+.sel-count select{
+    width: 120px;
+}
+.btn-search {
+    position: absolute;
+    right: 0;
+    top:0;
+    bottom:0;
+    margin: auto;
+}
+/**
+* ~~~~~~~~~~~~历史查询部分~~~~~~~~~~~~
+**/
+.history {
+    margin: 0 auto;
+    width: 960px;
+}
+.backward {
+    display: inline-block;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #dedede;
+    width: 4%;
+    height: 70px;
+    padding: 0;
+    vertical-align: bottom;
+    
+    background-color: #fff;
+    background-image: url(images/backward.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.backward:hover {
+    background-image: url(images/back.png);
+    border-color: #aaddff;
+}
+.forward {
+    background-image: url(images/forward.png);
+}
+.forward:hover {
+    background-image: url(images/for.png);
+}
+.amount {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #dedede;
+    padding: 10px 20px;
+    width: 12.5%;
+    height: 70px;
+    text-align: center;
+    vertical-align: bottom;
+    
+    background-color: #fff;
+}
+.amount:hover {
+    border-top: 3px #2289bf solid;
+}
+.price {
+    margin: auto;
+    width: 60px;
+    font-size: 21px;
+    text-indent: 10px;
+    
+    color: #ec6500;
+    background-image: url(images/rmb.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.inquiry {
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #dedede;
+    height: 70px;
+    width: 13.75%;
+    text-indent: 60px;
+    line-height: 70px;
+    
+    background-color: #fff;
+    background-image: url(images/history.png);
+    background-position: 20%;
+    background-repeat: no-repeat;
+}
+/**
+* ~~~~~~~~~~~~统计成交量部分~~~~~~~~~~~~
+**/
+.count {
+    margin: 20px auto;
+    width: 960px;
+    font-size: 0;
+}
+.count > p {
+    font-size: 12px;
+    margin:5px 0;
+}
+.card-deal {
+    display:inline-block;
+    margin-left: 4%;
+    box-sizing: border-box;
+    border: 1px solid #dedede;
+    border-left: 3px solid #44b29e;
+    padding: 10px;
+    width: 22%;
+    
+    background-color: #fff;
+}
+.card-first{
+    margin-left:0;
+}
+.card-deal p{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 25px;
+    font-size: 10px;
+    color: #b0b0b0;
+}
+.card-deal strong {
+    font-weight: normal;
+    font-size: 12px;
+    color: #323333;
+}
+.colorblock {
+    float: right;
+    width: 60px;
+    height: 50px;
+    background-color: #44b29e;
+}
+.card-blue {
+    border-left-color: #2289bf;
+}
+.card-blue .colorblock{
+    background-color: #2289bf;
+}
+.card-red {
+    border-left-color: #d04a36;
+}
+.card-red .colorblock{
+    background-color: #d04a36;
+}
+.card-yellow {
+    border-left-color: #e2cd47;
+}
+.card-yellow .colorblock{
+    background-color: #e2cd47;
+}
+/**
+* ~~~~~~~~~~~~项目部分~~~~~~~~~~~~
+**/
+.project {
+    margin: auto;
+    width: 960px;
+    font-size: 0;
+    color: #535353;
+}
+
+/* 左上的项目表格 */
+.project-left {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    border: solid 1.5px #d0d2d6;
+    border-radius: 10px;
+    width: 530px;
+    height: 350px;
+    background-color: #fff;
+}
+.project h3 {
+    border: solid 1px #e7e8eb;
+    border-radius: 10px 10px 0 0;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 40px;
+    text-indent: 20px;
+    
+    color: #aaa;
+    background-color: #f4f6f7;
+}
+/**
+* 使用伪元素选择器:checked、相邻兄弟选择器+
+* 以及input的radio类型来完成Tab模拟
+**/
+.project-left .tab-radio{
+    display: none;
+}
+.tab-handler{
+    display: inline-block;
+    margin-top: 10px;
+    box-sizing: border-box;
+    
+    border-radius: 5px 5px 0 0;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 2px solid #dadada;
+    width: 85px;
+    height: 30px;
+    
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: bottom;
+    background-color: #ededf0;
+}
+.tab-handler-first {
+    margin-left: 20px;
+}
+.tab-radio:checked + .tab-handler{
+    border: 2px solid #dadada;
+    border-bottom: 0;
+    background-color: transparent;
+}
+.tab-radio:checked + .tab-handler + .project-content{
+    visibility: visible;
+    opacity: 1;
+    z-index: 5;/* 用于选中表格内容 */
+}
+.project-content {
+    position: absolute;
+    visibility: hidden;
+    
+    top: 110px;
+    left: 65px;
+    box-sizing: border-box;
+    border-collapse:collapse;
+    font-size: 14px;
+    width: 400px;
+    height: 180px;
+}
+.project-content  td {
+    border: 1px solid #d2d2d3;
+    text-align: center;
+}
+.project-content td:hover{
+    background-color: #f3f5f6;
+    cursor: pointer;
+}
+.project-border {
+    position: relative;
+    margin: 0 20px;
+    box-sizing: border-box;
+    border: 2px solid #d2d2d3;
+    border-top: 0;
+    border-radius: 0 5px 5px 5px;
+    height: 250px;
+    padding-top: 30px;
+}
+.space {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    border: 2px solid #d2d2d3;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0 5px;
+    width: 148px;
+    height: 20px;
+}
+
+/* 右上的简介 */
+.project-right {
+    display: inline-block;
+    position: relative;
+    margin-left: 20px;
+    box-sizing: border-box;
+    border: solid 1.5px #d0d2d6;
+    border-radius: 10px;
+    width: 410px;
+    height: 350px;
+    
+    vertical-align: top;
+    background-color: #fff;
+}
+.project-right  table{
+    margin: 20px 40px 10px 40px;
+    width: 330px;
+    
+    font-size: 12px;
+    border: 0;
+    border-collapse: collapse;
+}
+.project-right tr {
+    box-sizing: border-box;
+    height: 45px;
+    text-indent: 10px;
+}
+.td-1 {
+    border-bottom: solid 1.5px #d0d2d6;
+}
+.td-2 {
+    border-right: solid 1.5px #d0d2d6;
+}
+.td-3 {
+    border-top: solid 1.5px #d0d2d6;
+    border-bottom: solid 1.5px #d0d2d6;
+    padding: 5px 5px 5px 0;
+    height: 135px;
+    vertical-align: top;
+}
+.project-right h4 {
+    color: #b3b2b2;
+}
+.project-right label {
+    font-size: 12px;
+    color: #b3b2b2;
+    vertical-align: middle;
+}
+.project-right input {
+    margin: 0 5px 0 40px;
+    vertical-align: middle;
+}
+.project-right button {
+    float: right;
+    margin-right: 40px;
+}
+/* 左下日历选择 */
+.calendar {
+    display: inline-block;
+    position: relative;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: solid 1.5px #d0d2d6;
+    border-radius: 10px;
+    width: 390px;
+    height: 400px;
+    
+    vertical-align: top;
+    background-color: #fff;
+}
+.date-sel {
+    margin: 10px;
+}
+.sel-2 {
+    margin: 3px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+        
+    border: solid 1px #d0d2d6;
+    box-sizing: border-box;
+    padding-right: 30px;
+    width: 90px;
+    height: 30px;
+    
+    text-indent: 2px;
+    text-align: center;
+    line-height: 30px;
+    background-image: url(images/sel-2.png);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+/* for IE */
+.sel-2::-ms-expand {
+    display: none;
+}
+.sel-2 option{
+    height: 25px;
+}
+.btn-today {
+    margin: 3px;
+    border: solid 1px #d0d2d6;
+    width: 70px;
+    height: 30px;
+    
+    line-height: 30px;
+    vertical-align: bottom;
+    background-color: transparent;
+}
+/* 周一到周日 */
+.weekdays {
+    margin: 0 10px;
+    padding: 10px 0;
+    border-bottom: solid 1.5px #d0d2d6;
+    border-top: solid 1.5px #a9cfec;
+}
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #535353;
+    font-family: "SimHei";
+    font-size: 12px;
+    text-align: center;
+}
+/* 日期 (1-31) */
+.days {
+    padding: 10px;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 13.5%;
+    text-align: center;
+    margin: 5px 1px;
+    font-size:12px;
+    color:#777;
+}
+
+/* 选择的日期 */
+.days li.active {
+    border: #f4c21d 1.5px solid;
+}
+.dayoff {
+    color: #c9161d;
+}
+/*右下汽车品牌排行榜*/
+.rank {
+    display: inline-block;
+    position: relative;
+    margin: 20px 0 0 20px;
+    box-sizing: border-box;
+    border: solid 1.5px #d0d2d6;
+    border-radius: 10px;
+    width: 550px;
+    height: 400px;
+    
+    vertical-align: top;
+    background-color: #fff;
+}
+.rank table {
+    margin: 20px auto;
+    width: 480px;
+    height: 310px;
+    border: solid 1.5px #d0d2d6;
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: center;
+}
+.rank tr:hover {
+    background-color: #f3f5f6;
+    cursor: pointer;
+}
+.rank tr:first-child:hover {
+    background-color: transparent;
+    cursor: auto;
+}
+.rank td{
+    border: solid 1.5px #d0d2d6;
+}
+.rect {
+    width: 300px;
+    text-align: left;
+    text-indent: 40px;
+    background-image: url(images/table-rank/rect1.png);
+    background-position: 90%;
+    background-repeat: no-repeat;
+}
+.rect-2 {
+    background-image: url(images/table-rank/rect2.png);
+}
+.rect-3 {
+    background-image: url(images/table-rank/rect3.png);
+}
+.rect-4 {
+    background-image: url(images/table-rank/rect4.png);
+}
+.rect-5 {
+    background-image: url(images/table-rank/rect5.png);
+}
+.rect-6 {
+    background-image: url(images/table-rank/rect6.png);
+}
+.rect-7 {
+    background-image: url(images/table-rank/rect7.png);
+}
+.rect-8 {
+    background-image: url(images/table-rank/rect8.png);
+}
+.rect-9 {
+    background-image: url(images/table-rank/rect9.png);
+}
+.rect-10 {
+    background-image: url(images/table-rank/rect10.png);
+}
