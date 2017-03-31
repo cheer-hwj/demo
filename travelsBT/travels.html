@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>3-travelemsBinaryTree</title>
+        <style>
+            #btns {
+                margin: auto;
+                width:500px;
+            }
+            button{
+                width: 100px;
+                height: 40px;
+                margin: 20px;
+                background: transparent;
+                border: 1px solid #aae;
+            }
+            button:hover {
+                background-color: #eef;
+            }
+            
+            div {
+                display: flex;
+                justify-content: space-between;
+                margin: 20px;
+                padding: 20px;
+                box-sizing: border-box;
+                border: 2px solid #333;
+                background-color: #fff;
+                transition: all .5s ease-in-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="root">
+            <div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <section id="btns">
+          <button id="pre">前序遍历</button>
+          <button id="ord">中序遍历</button>
+          <button id="pos">后序遍历</button>
+        </section>
+        <script>
+            var root = document.getElementById("root");
+            var count;
+            var timer;
+            /* 绑定监听事件 */
+            document.getElementById("btns").addEventListener("click", function(event) {
+                while (timer > 0){
+                    clearTimeout(timer);
+                    timer--;
+                }
+                count = 0;
+                if (event.target.id === "pre"){
+                    preorder(root);
+                }
+                if (event.target.id === "ord"){
+                    order(root);
+                }
+                if (event.target.id === "pos"){
+                    posterior(root);
+                }
+            });
+            function render(elem){
+                elem.style.backgroundColor = "#189ebb";
+                elem.style.transform = "scale(1.02)";
+            }
+            function clean(elem){
+                elem.style.backgroundColor = "#fff";
+                elem.style.transform = "scale(1)"
+            }
+            function preorder(root){
+              var list = root.children;
+              timer = setTimeout(function(){
+                render(root);
+                setTimeout(clean, 500, root)
+              }, 500 * count++);
+              if (list[0]){
+                preorder(list[0]);
+              }
+              if (list[1]){
+                preorder(list[1]);
+              }
+            }
+            function order(root){
+              var list = root.children;
+              if (list[0]) {
+                order(list[0]);
+              }
+              timer = setTimeout(function(){
+                render(root);
+                setTimeout(clean, 500, root)
+              }, 500 * count++);
+              if (list[1]) {
+                order(list[1]);
+              }
+            }
+            function posterior(root){
+              var list = root.children;
+              if (list[0]) {
+                posterior(list[0]);
+              }
+              if (list[1]) {
+                posterior(list[1]);
+              }
+              timer = setTimeout(function(){
+                render(root);
+                setTimeout(clean, 500, root)
+              }, 500 * count++);
+            }
+        </script>
+    </body>
+
+</html>

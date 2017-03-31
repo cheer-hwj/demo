@@ -6,3 +6,4 @@
 * [4.使用HTML+CSS实现常见的产品官网的页面架构及样式布局](product/产品官网的页面架构.html)
 * [5.使用HTML+CSS实现一个稍微复杂的页面](normalPage/复杂页面的HTML+CSS实现.html)
 * [6.使用Dom制作引语生成器](quoteMachine/quote.html)
+* [7.三种方式遍历二叉树](travelsBT/travels.html)
