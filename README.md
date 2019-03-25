@@ -14,4 +14,4 @@
 
 * [三种方式遍历二叉树](travelsBT/travels.html)
 
-* [一个Markdown编辑器](Markdown/index.html)
+* [一个Markdown编辑器](Markdown/)
